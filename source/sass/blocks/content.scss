@@ -13,6 +13,8 @@
   &__col1 {
     width: 59%;
     padding-top: 10%;
+    will-change: transform;
+    transform: translateZ(0);
     animation: content-title 1s ease;
 
     @media (max-width: 768px) {
@@ -36,7 +38,6 @@
     display: flex;
     flex-direction: column;
 
-
     @media (max-width: 768px) {
       width: 100%;
       position: absolute;
@@ -45,6 +46,7 @@
       align-items: center;
       display: flex;
       opacity: 1;
+      will-change: transform;
       transform: translateX(0);
       transition: all $default-transition-settings;
 
@@ -55,6 +57,8 @@
       opacity: 0;
       font-size: 30px;
       line-height: 40px;
+      will-change: transform;
+      transform: translateZ(0);
       animation: content-text 1s ease forwards;
       animation-delay: 0.3s;
 
@@ -76,6 +80,8 @@
   &__svg-tablet {
     opacity: 0;
     padding-bottom: 25px;
+    will-change: transform;
+    transform: translateZ(0);
     animation: content-svg 0.8s ease-in forwards;
     animation-delay: 1s;
 
@@ -95,6 +101,7 @@
 }
 
 .hide-content {
+  will-change: transform;
   transform: translateX(-100%);
   transition: all $default-transition-settings;
 }
