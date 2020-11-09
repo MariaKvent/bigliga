@@ -1,0 +1,150 @@
+.content {
+  display: none;
+  min-height: calc((100 * var(--vh, 1vh)) - 80px);
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 0 35px;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+
+  &__col1 {
+    width: 59%;
+    padding-top: 10%;
+    animation: content-title 1s ease;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      display: flex;
+      padding: 30% 35px 35px;
+    }
+
+    h1 {
+      font-size: 96px;
+      line-height: 96px;
+      color: $color-neon-blue;
+      word-wrap: break-word;
+      margin-top: 0;
+    }
+  }
+
+  &__col2 {
+    width: 37%;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+
+
+    @media (max-width: 768px) {
+      width: 100%;
+      position: absolute;
+      height: 100%;
+      padding: 20% 35px 35px;
+      align-items: center;
+      display: flex;
+      opacity: 1;
+      transform: translateX(0);
+      transition: all $default-transition-settings;
+
+      background-color: $color-neon-blue;
+    }
+
+    p {
+      opacity: 0;
+      font-size: 30px;
+      line-height: 40px;
+      animation: content-text 1s ease forwards;
+      animation-delay: 0.3s;
+
+      @media (max-width: 768px) {
+        opacity: 1;
+        animation: none;
+        margin-top: 0;
+        max-width: 50%;
+        color: $color-default-white;
+      }
+    }
+
+    svg {
+      width: 316px;
+      height: 289px;
+    }
+  }
+
+  &__svg-tablet {
+    opacity: 0;
+    padding-bottom: 25px;
+    animation: content-svg 0.8s ease-in forwards;
+    animation-delay: 1s;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__svg-mobile {
+    padding-bottom: 25px;
+    display: none;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+}
+
+.hide-content {
+  transform: translateX(-100%);
+  transition: all $default-transition-settings;
+}
+
+
+@keyframes content-title {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes content-text {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes content-svg {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateY(1%);
+  }
+
+  45%,
+  75% {
+    transform: translateY(-1%);
+  }
+
+  60%,
+  90% {
+    transform: translateY(1%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

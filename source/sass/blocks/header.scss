@@ -1,3 +1,18 @@
 .header {
   display: block;
+  padding: 25px 0;
+
+  &__logo {
+    display: inline-block;
+    transition: opacity $default-transition-settings;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    svg {
+      width: 192px;
+      height: 24px;
+    }
+  }
 }

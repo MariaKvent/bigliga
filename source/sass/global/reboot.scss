@@ -34,6 +34,16 @@ body {
 a {
   color: $color-default-black;
   text-decoration: none;
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
+
+h1 {
+  margin: 0;
+  font-weight: 400;
 }
 
 img,
@@ -75,6 +85,10 @@ textarea {
 
 select {
   border-radius: 0;
+}
+
+p {
+  margin: 0;
 }
 
 // ie11 X removal
