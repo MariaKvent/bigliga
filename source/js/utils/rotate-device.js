@@ -1,17 +1,17 @@
 const rotateDevice = () => {
 
-  var mql = window.matchMedia("(orientation: portrait)");
+  let mql = window.matchMedia('(orientation: portrait)');
 
   // для отлеживания поворота в devTools Chrome
 
-  mql.addListener(function() {
+  mql.addListener(function () {
     location.reload();
   });
 
-  window.addEventListener("orientationchange", function() {
+  window.addEventListener('orientationchange', function () {
     location.reload();
   }, false);
 
 };
 
-export {rotateDevice}
+export {rotateDevice};

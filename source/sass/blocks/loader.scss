@@ -18,10 +18,9 @@
     width: 100%;
     top: 50%;
     left: 50%;
+    will-change: opacity;
     transform: translate(-50%, -50%);
-    will-change: transform;
-    transform: translateZ(0);
-    animation: loader  1s ease-in-out;
+    animation: loader 1s ease-in-out;
 
     @media (max-width: 768px) {
       height: 70px;
